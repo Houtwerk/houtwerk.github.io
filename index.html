@@ -101,6 +101,17 @@
         background-size: cover;
         background-position: center;
       }
+     
+      .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.card-link:hover {
+  transform: scale(1.02);
+}
       
       .card-gebintenbouw {
         background-image: url('images/opbouw_spanten1.1-min.jpg');
@@ -331,9 +342,11 @@
    <section class="Aanbod">
      <h2 id="aanbod">Aanbod</h2>
      <div class="cards">
-       <div class="card card-gebintenbouw">
-      <h3>Gebintenbouw</h3>
-      <a href="gebintenbouw.html" class="card-button">Lees meer</a>
+<a href="gebintenbouw.html" class="card-link">
+  <div class="card card-gebintenbouw">
+    <h3>Gebintenbouw</h3>
+  </div>
+</a>
        </div>
        <div class="card card-custom">
       <h3>Custom houtwerk</h3>

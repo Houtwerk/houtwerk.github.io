@@ -90,21 +90,27 @@
       gap: 30px;
     }
 
-    .intro-block {
-      flex: 1 1 300px;
-      max-width: 350px;
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+.intro-block img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
 
-    .intro-block img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
+.intro-block {
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: white;
+}
+
+.intro-block:first-child {
+  background-color: transparent;
+}
 
     .intro-block h3 {
       font-size: 22px;
@@ -280,7 +286,7 @@
       <img src="images/sfeer-min.JPG" class="active" alt="Banner 1">
       <img src="images/detail_nok1.1-min.jpeg" alt="Banner 2">
       <img src="images/detail_sneeuw_NW1.1-min.JPG" alt="Banner 3">
-      <img src="images/Gereedschap1.1.jpg" alt="Banner 4">
+      <img src="images/werkwijze1.2-min.JPG" alt="Banner 4">
     </div>
   </section>
 
@@ -291,10 +297,10 @@
 
   <section class="intro-info" id="info">
     <div class="intro-block">
-      <img src="images/opbouw_spanten1.1-min.jpg" alt="Gebintenbouw">
-      <h3>Gebintenbouw</h3>
-      <p>Wij maken traditionele gebinten met de hand, volledig op maat. Duurzaam, ambachtelijk en passend bij de stijl van jouw woning of schuur.</p>
-    </div>
+  <img src="images/opbouw_spanten1.1-min.jpg" alt="Gebintenbouw">
+  <h3>Gebintenbouw</h3>
+  <p>Wij maken traditionele gebinten met de hand, volledig op maat. Duurzaam, ambachtelijk en passend bij de stijl van jouw woning of schuur.</p>
+</div>
     <div class="intro-block">
       <img src="images/1-min.JPG" alt="Projecten">
       <h3>Projecten</h3>

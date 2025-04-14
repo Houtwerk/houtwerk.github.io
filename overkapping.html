@@ -2,21 +2,73 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Eiken overkapping</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eiken overkapping | Houtwerk Schiermonnikoog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    p {
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+.project-galerij {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.project-galerij h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.project-galerij .intro {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.foto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.foto-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+  </style>
 </head>
 <body>
-  <header>
-    <!-- eventueel je navigatie -->
-  </header>
-
-  <main>
-    <h1>Meer over eiken overkapping</h1>
-    <p>Hier vertel je alles over eiken overkapping, bijvoorbeeld techniek, aanpak, voorbeelden, etc.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
-  </footer>
-</body>
-</html>
+  <h1>Eiken overkapping</h1>
+<section class="project-galerij">
+  <div class="container">
+    <p class="intro">Een impressie van een op maat gemaakte overkapping in eikenhout met traditionele houtverbindingen.</p>
+    
+    <div class="foto-grid">
+      <img src="images/overkapping1.jpg" alt="Eiken overkapping 1">
+      <img src="images/overkapping2.jpg" alt="Eiken overkapping 2">
+      <img src="images/overkapping3.jpg" alt="Eiken overkapping 3">
+      <img src="images/overkapping4.jpg" alt="Eiken overkapping 4">
+      <img src="images/overkapping5.jpg" alt="Eiken overkapping 5">
+      <img src="images/overkapping6.jpg" alt="Eiken overkapping 6">
+    </div>
+  </div>
+</section>

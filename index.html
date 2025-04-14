@@ -1,159 +1,456 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Houtwerk Schiermonnikoog</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
+ <html lang="nl">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+     <style>
+       body {
+         font-family: 'Outfit', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f4;
+       }
+       html {
+         scroll-behavior: smooth;
+         scroll-padding-top: 190px;
+       }
+       header {
+         background-color: white;
+         padding: 15px 0;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         position: fixed;
+         width: 100%;
+         top: 0;
+         left: 0;
+         z-index: 100;
+       }
+       .container {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 10px;
+       }
+       .logo img {
+         width: 350px;
+         height: auto;
+       }
+       nav a {
+         color: #333;
+         margin-left: 20px;
+         text-decoration: none;
+         font-size: 18px;
+       }
+       nav a:hover {
+         text-decoration: underline;
+       }
+       .banner {
+         width: 100%;
+         height: 450px;
+         position: relative;
+         overflow: hidden;
+         margin-top: 130px;
+       }
+       .carousel img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         position: absolute;
+         opacity: 0;
+         transition: opacity 1s ease-in-out;
+       }
+       .carousel img.active {
+         opacity: 1;
+       }
+       .hero {
+         font-size: 25px;
+         text-align: center;
+         padding: 20px 20px;
+         margin-bottom: 550px;
+         background-color: #eee;
+       }
+       .Aanbod {
+         padding: 20px;
+         margin-bottom: 100px;
+         text-align: center;
+       }
+ 
+       .cards {
+         display: flex; 
+         justify-content: center;
+         gap: 20px; 
+         flex-wrap: wrap;
+       }
+       .cards a {
+        text-decoration: none;
+        color: white;
+        display: block;
+       }
+       .card {
+         width: 250px;
+         height: 300px;
+         text-align: center;
+         padding: 20px;
+         background-color: transparent;
+         color: white;
+         font-weight: bold;
+         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         background-size: cover;
+         background-position: center;
+       }
+ 
+       .card-gebintenbouw {
+         background-image: url('images/opbouw_spanten1.1-min.jpg');
+       }
+ 
+       .card-custom {
+         background-image: url('images/sfeer-min.JPG');
+       }
+ 
+       .card-restauratie {
+         background-image: url('images/Hout reparatie 1.1-min.jpg');
+       }
+ 
+       section.Projecten {
+         padding: 20px;
+         margin-bottom: 150px;
+         text-align: center;
+       }
+       .card-Gebintconstructie {
+         background-image: url('images/1-min.JPG');
+       }
+ 
+       .card-Overkapping {
+         background-image: url('images/Overkapping1.1-min.JPG');
+       }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px 0;
-    }
+     section.werkwijze {
+  padding: 20px;
+  margin-top: 75px;
+  margin-bottom: 150px;
+  text-align: center;
+}
+      
+.card-werkwijze-techniek {
+  background-image: url('images/handwerk-min.jpg');
+}
 
-    header {
-      background-color: #2c3e50;
-      color: #fff;
-      padding: 20px 0;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    nav ul li {
-      margin: 0;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 12px;
-      transition: background-color 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.cta {
-      background-color: #e67e22;
-      border-radius: 4px;
-    }
-
-    .hero {
-      background-image: url('images/sfeer.jpg'); /* Voeg je eigen afbeelding toe */
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .hero h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 24px;
-    }
-
-    section {
-      padding: 60px 0;
-    }
-
-    section h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    section ul {
-      list-style: disc inside;
-      padding-left: 20px;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="container">
-      <h1>Houtwerk Schiermonnikoog</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projecten</a></li>
-          <li><a href="#">Over ons</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#" class="cta">Offerte aanvragen</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+.card-gereedschap {
+  background-image: url('images/Gereedschap1.1.jpg');
+}
+ 
+     #proces {
+   text-align: center;
+   padding: 50px 20px;
+   background-color: #fff;
+ }
+ 
+ #proces h2 {
+   font-size: 32px;
+   margin-bottom: 50px;
+ }
+ 
+ .steps {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   max-width: 800px;
+   margin: 0 auto;
+ }
+ 
+ .step {
+   background: #f4f4f4;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   max-width: 600px;
+   text-align: center;
+   transition: transform 0.2s ease-in-out;
+ }
+ 
+ .step:hover {
+   transform: translateY(-5px); 
+ }
+ 
+ .step-number {
+   width: 50px;
+   height: 50px;
+   background: #333;
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   margin: 0 auto 10px;
+ }
+ 
+ .step h3 {
+   font-size: 22px;
+   margin: 10px 0;
+ }
+ 
+ .step p {
+   font-size: 16px;
+   color: #666;
+ }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+      }
+ .contact-form {
+   max-width: 900px; 
+   margin: 0 auto;
+   padding: 25px;
+   background: #f9f9f9;
+   border-radius: 8px;
+   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+ }
+ 
+ .contact-form label {
+   font-weight: bold;
+   display: block;
+   margin-top: 12px;
+ }
+ 
+ .contact-form input,
+ .contact-form textarea {
+   width: 100%;
+   padding: 12px;
+   margin-top: 6px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 16px;
+ }
+ 
+ .contact-form textarea {
+   resize: vertical;
+   min-height: 120px;
+ }
+ 
+ .contact-form button {
+   display: block;
+   width: 100%;
+   padding: 12px;
+   background: #333; 
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 18px;
+   cursor: pointer;
+   margin-top: 18px;
+   transition: background 0.3s ease-in-out;
+ }
+ .contact-form button:hover {
+   background: #757474;
+ }
+       @media (max-width: 768px) {
+   .container {
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+   }
+ 
+   nav {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-top: 10px;
+   }
+ 
+   nav a {
+     margin: 0;
+     font-size: 16px;
+   }
+   @media (max-width: 768px) {
+   .logo img {
+     width: 200px; 
+   }
+ @media (max-width: 600px) {
+   .cards {
+     flex-direction: column;
+     align-items: center;
+   }
+ 
+   .card {
+     width: 90%;
+     max-width: 300px;
+   }
+ @media (max-width: 768px) {
+   .hero {
+     font-size: 20px;
+     padding: 15px;
+     margin-bottom: 50px;
+   }
+ @media (max-width: 600px) {
+   .contact-form {
+     width: 90%;
+     padding: 15px;
+   }
+ @media (max-width: 768px) {
+   .steps {
+     width: 100%;
+     padding: 0 15px;
+   }
+ 
+   .step {
+     width: 90%;
+   }
+ }
+ 
+    </style>
+  </head>
+  <body>
+  <section id="home" style="height: 1px;"></section>
+    <header>
+   <div class="container">
+     <div class="logo">
+       <img src="images/logo_transparant.png" alt="Logo" class="logo">
+     </div>
+     <nav>
+       <a href="#home">Home</a>
+       <a href="#aanbod">Aanbod</a>
+       <a href="#projecten">Projecten</a>
+       <a href="#werkwijze">Werkwijze</a>
+       <a href="#proces">Proces</a>
+       <a href="#contact">Contact</a>
+     </nav>
+   </div>
+ </header>
+ 
+    <section class="banner">
+      <div class="carousel">
+        <img src="images/sfeer-min.JPG" class="active" alt="Banner 1">
+        <img src="images/detail_nok1.1-min.jpeg" alt="Banner 2">
+        <img src="images/detail_sneeuw_NW1.1-min.JPG" alt="Banner 3">
+        <img src="images/detail_schoor1.2-min.jpg" alt="Banner 4">
+      </div>
+    </section>
+ 
   <section class="hero">
-    <div class="container">
-      <h2>Vakkundig houtwerk op Schiermonnikoog</h2>
-      <p>Duurzaam bouwen met natuurlijke materialen</p>
-    </div>
-  </section>
+      <h2 id="home">Traditioneel gebintenbouw Schiermonnikoog</h2>
+       <p>Houtwerk op maat</p
+    </section>
+ 
+    <section class="Aanbod">
+  <h2 id="aanbod">Aanbod</h2>
+  <div class="cards">
+    <a href="gebintenbouw.html" class="card card-gebintenbouw">
+      <h3>Gebintenbouw</h3>
+    </a>
+    <a href="houtwerkopmaat.html" class="card card-custom">
+      <h3>Houtwerk op maat</h3>
+    </a>
+    <a href="reparatie.html" class="card card-restauratie">
+      <h3>Reparatie en restauratie</h3>
+    </a>
+  </div>
+</section>
+ 
+<section class="projecten">
+  <h2 id="projecten">Projecten</h2>
+  <div class="cards">
+    <a href="woning.html" class="card card-Gebintconstructie">
+      <h3>Woningen met gebintconstructie</h3>
+    </a>
+    <a href="overkapping.html" class="card card-Overkapping">
+      <h3>Eiken overkapping</h3>
+    </a>
+  </div>
+</section>
 
-  <section class="intro">
-    <div class="container">
-      <h3>Ambachtelijk timmerwerk</h3>
-      <p>Wij leveren maatwerk in houtbouw: van gebinten tot complete houtconstructies. Onze specialisaties:</p>
-      <ul>
-        <li>Traditionele eiken gebinten</li>
-        <li>Lariks constructiewerk</li>
-        <li>CLT & Houtskeletbouw</li>
-        <li>Gevelbekleding & dakbeschot</li>
-        <li>Duurzame houtprojecten op maat</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="projects">
-    <div class="container">
-      <h3>Onze projecten</h3>
-      <p>Bekijk een selectie van recent gerealiseerde houtconstructies op Schiermonnikoog en omgeving. Elk project is uniek en met zorg gerealiseerd.</p>
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="container">
-      <h3>Over ons</h3>
-      <p>Houtwerk Schiermonnikoog is opgericht door vakmannen met passie voor hout en natuur. Wij combineren ambacht en modern vakmanschap om authentieke en duurzame gebouwen te realiseren.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
+<section class="werkwijze">
+  <h2 id="werkwijze">Werkwijze</h2>
+  <div class="cards">
+   <a href="werkwijze.html" class="card card-werkwijze-techniek">
+  <h3>Werkwijze en techniek</h3>
+</a>
+<a href="gereedschap.html" class="card card-gereedschap">
+  <h3>Gebruikte gereedschappen</h3>
+</a>
+  </div>
+</section>
+ 
+ <section id="proces">
+   <h2 id="proces">Het proces van aanvraag tot eindproduct</h2> 
+   <div class="steps">
+     <div class="step">
+       <div class="step-number">1</div>
+       <h3>Kennismaking</h3>
+       <p>We starten met een vrijblijvend gesprek om uw wensen en ideeën te bespreken. Een woning, schuur, garage, overkapping of veranda, alles kan.</p>
+     </div>
+ 
+     <div class="step">
+       <div class="step-number">2</div>
+       <h3>Bespreken van het ontwerp</h3>
+       <p>We werken het ontwerp uit en zorgen ervoor dat alles naar wens en haalbaar is.</p>
+     </div>
+ 
+     <div class="step">
+       <div class="step-number">3</div>
+       <h3>Offerte traject</h3>
+       <p>We stellen een offerte op met alle details en kosten voor uw project.</p>
+     </div>
+ 
+     <div class="step">
+       <div class="step-number">4</div>
+       <h3>Productie van het project</h3>
+       <p>Het bouwen van de constructie begint in de werkplaats. Dit doen we uitsluiten met handgereedschap en traditionele technieken.</p>
+     </div>
+ 
+     <div class="step">
+       <div class="step-number">5</div>
+       <h3>Afleveren en plaatsen</h3>
+       <p>We leveren uw constructie af of plaatsen deze op locatie. Dit kan in heel Nederland of zelfs daar buiten.</p>
+     </div>
+   </div>
+ </section>
+ 
+    <section class="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Neem contact op voor meer informatie of een vrijblijvende offerte.</p>
+ <form action="https://formspree.io/f/xvgkblnw" method="POST" class="contact-form">
+   <label for="name">Naam:</label>
+   <input type="text" id="name" name="name" required>
+ 
+   <label for="email">E-mail:</label>
+   <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+ 
+   <label for="message">Bericht:</label>
+   <textarea id="message" name="message" rows="5" required></textarea>
+ 
+   <button type="submit">Verzenden</button>
+ </form>
+    </section>
+ 
+    <footer>
       <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
-      <p>Contact: info@houtwerkschiermonnikoog.nl | 06 1234 5678</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+    </footer>
+ 
+    <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll('.carousel img');
+ 
+      function switchImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('active');
+      }
+ 
+      setInterval(switchImage, 10000); // Wissel elke 10 seconden
+    </script>
+ 
+  </body>
+  </html>

@@ -128,65 +128,76 @@ html {
       margin: 0;
     }
 
-    #proces {
-      text-align: center;
-      padding: 50px 20px;
-      background-color: #fff;
-    }
+  #proces {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
 
-    #proces h2 {
-      font-size: 32px;
-      margin-bottom: 50px;
-    }
+#proces h2 {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
 
-    .steps {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.proces-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-    .step {
-      background: #f4f4f4;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-      transition: transform 0.2s ease-in-out;
-    }
+.proces-blok {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-align: left;
+}
 
-    .step:hover {
-      transform: translateY(-5px);
-    }
+.proces-blok .nummer {
+  font-size: 26px;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
 
-    .step-number {
-      width: 50px;
-      height: 50px;
-      background: #333;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      margin: 0 auto 10px;
-    }
+.proces-blok .tekst h3 {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+}
 
-    .step h3 {
-      font-size: 22px;
-      margin: 10px 0;
-    }
+.proces-blok .tekst p {
+  font-size: 16px;
+  color: #444;
+  margin: 0;
+}
 
-    .step p {
-      font-size: 16px;
-      color: #666;
-    }
+.proces-blok.links {
+  flex-direction: row;
+}
 
+.proces-blok.rechts {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .proces-blok,
+  .proces-blok.links,
+  .proces-blok.rechts {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .proces-blok .tekst {
+    padding-top: 10px;
+  }
     .contact {
       text-align: center;
       padding: 50px 20px;
@@ -344,7 +355,7 @@ html {
       <div class="info-afbeelding" style="background-image: url('images/1-min.JPG');"></div>
       <div class="info-tekst">
         <h3>Huidige projecten</h3>
-        <p>Ons huidig project, een woning met een traditioneel gebinten constructie in comnbinatie met houtskeletbouw.</p>
+        <p>Ons huidig project, een woning met een traditioneel gebinten constructie in combinatie met houtskeletbouw.</p>
       </div>
     </div>
 
@@ -352,42 +363,51 @@ html {
       <div class="info-afbeelding" style="background-image: url('images/handwerk-min.jpg');"></div>
       <div class="info-tekst">
         <h3>Werkwijze</h3>
-        <p>Alles met de hand gemaakt volgens traditionele methodes. Grotendeels met traditioneel gereedschap en oog voor detail, van ontwerp tot plaatsing.</p>
+        <p>Alles wordt met de hand gemaakt, volgens traditionele methodes en ook alleen hand gereedschap. Op die manier houden we het stukkje ambacht in tact.</p>
       </div>
     </div>
   </section>
 
   <section id="proces">
-    <h2>Het proces van aanvraag tot eindproduct</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
+  <h2>Het proces van aanvraag tot eindproduct</h2>
+  <div class="proces-wrapper">
+    <div class="proces-blok links">
+      <div class="nummer">1</div>
+      <div class="tekst">
         <h3>Kennismaking</h3>
         <p>Alles begint met een idee. Samen kijken we of het haalbaar is.</p>
       </div>
-
-      <div class="step">
-        <div class="step-number">2</div>
-        <h3>Ontwerp</h3>
+ </div>
+    
+     <div class="proces-blok rechts">
+      <div class="nummer">2</div>
+      <div class="tekst">
+        <h3>Het ontwerp</h3>
         <p>Wij maken een conceptontwerp om te kijken of alles technisch en visueel klopt.</p>
       </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
+ </div>
+      
+     <div class="proces-blok links">
+      <div class="nummer">3</div>
+      <div class="tekst">
         <h3>Offerte</h3>
         <p>Nadat alle ideeën zijn verwerkt en afgestemd stellen we een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
       </div>
+    </div>
 
-      <div class="step">
-       <div class="step-number">4</div>
+      <div class="proces-blok rechts">
+      <div class="nummer">4</div>
+      <div class="tekst">
        <h3>De productie van het project</h3>
        <p>Het bouwen van de constructie begint in de werkplaats. Dit doen we uitsluitend met handgereedschap en traditionele technieken, zo houden we het ambacht in leven en dat zie je terug in de constructie.</p>
      </div>
- 
-     <div class="step">
-       <div class="step-number">5</div>
+    </div>
+    
+     <div class="proces-blok links">
+      <div class="nummer">5</div>
+      <div class="tekst">
        <h3>Afleveren en plaatsen</h3>
-       <p>We leveren uw constructie af of plaatsen deze zelf op locatie. Dit kan op Schiermonnikoog, in heel Nederland of zelfs daar buiten!</p>
+       <p>We leveren uw constructie af of plaatsen deze voor u op locatie. Dit kan op Schiermonnikoog, in heel Nederland of zelfs daar buiten.</p>
      </div>
    </div>
  </section>

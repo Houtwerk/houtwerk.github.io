@@ -139,47 +139,71 @@ html {
   margin-bottom: 60px;
 }
 
+#proces {
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#proces h2 {
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
 .proces-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+  gap: 40px;
 }
 
 .proces-blok {
+  text-align: left;
+}
+
+.nummer-tekst {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  background-color: transparent;
-  padding: 0;
-  border: none;
 }
 
-.proces-blok .nummer {
-  font-size: 22px;
+.nummer {
+  font-size: 20px;
   font-weight: bold;
   background-color: #333;
   color: white;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  margin-top: 4px;
 }
 
-.proces-blok .tekst h3 {
-  margin: 0 0 5px;
+.tekst h3 {
+  margin: 0 0 8px;
   font-size: 20px;
 }
 
-.proces-blok .tekst p {
+.tekst p {
   margin: 0;
   font-size: 16px;
   color: #444;
+}
+
+@media (max-width: 768px) {
+  .nummer-tekst {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tekst {
+    margin-top: 10px;
+  }
 }
     .contact {
       text-align: center;
@@ -356,42 +380,52 @@ html {
   <div class="proces-wrapper">
     
     <div class="proces-blok">
-      <div class="nummer">1</div>
-      <div class="tekst">
-        <h3>Kennismaking</h3>
-        <p>Alles begint met een idee. Samen kijken we of het haalbaar is.</p>
+      <div class="nummer-tekst">
+        <div class="nummer">1</div>
+        <div class="tekst">
+          <h3>Kennismaking</h3>
+          <p>Alles begint met een idee. Samen kijken we of het haalbaar is.</p>
+        </div>
       </div>
     </div>
 
     <div class="proces-blok">
-      <div class="nummer">2</div>
-      <div class="tekst">
-        <h3>Het ontwerp</h3>
-        <p>Wij maken een conceptontwerp om te kijken of alles technisch en visueel klopt.</p>
+      <div class="nummer-tekst">
+        <div class="nummer">2</div>
+        <div class="tekst">
+          <h3>Het ontwerp</h3>
+          <p>Wij maken een conceptontwerp om te kijken of alles technisch en visueel klopt.</p>
+        </div>
       </div>
     </div>
 
     <div class="proces-blok">
-      <div class="nummer">3</div>
-      <div class="tekst">
-        <h3>Offerte</h3>
-        <p>Nadat alle ideeën zijn verwerkt en afgestemd stellen we een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
+      <div class="nummer-tekst">
+        <div class="nummer">3</div>
+        <div class="tekst">
+          <h3>Offerte</h3>
+          <p>Nadat alle ideeën zijn verwerkt en afgestemd stellen we een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
+        </div>
       </div>
     </div>
 
     <div class="proces-blok">
-      <div class="nummer">4</div>
-      <div class="tekst">
-        <h3>De productie van het project</h3>
-        <p>Het bouwen van de constructie begint in de werkplaats. Dit doen we uitsluitend met handgereedschap en traditionele technieken, zo houden we het ambacht in leven en dat zie je terug in de constructie.</p>
+      <div class="nummer-tekst">
+        <div class="nummer">4</div>
+        <div class="tekst">
+          <h3>De productie van het project</h3>
+          <p>Het bouwen van de constructie begint in de werkplaats. Dit doen we uitsluitend met handgereedschap en traditionele technieken, zo houden we het ambacht in leven en dat zie je terug in de constructie.</p>
+        </div>
       </div>
     </div>
 
     <div class="proces-blok">
-      <div class="nummer">5</div>
-      <div class="tekst">
-        <h3>Afleveren en plaatsen</h3>
-        <p>We leveren uw constructie af of plaatsen deze voor u op locatie. Dit kan op Schiermonnikoog, in heel Nederland of zelfs daar buiten.</p>
+      <div class="nummer-tekst">
+        <div class="nummer">5</div>
+        <div class="tekst">
+          <h3>Afleveren en plaatsen</h3>
+          <p>We leveren uw constructie af of plaatsen deze voor u op locatie. Dit kan op Schiermonnikoog, in heel Nederland of zelfs daar buiten.</p>
+        </div>
       </div>
     </div>
 

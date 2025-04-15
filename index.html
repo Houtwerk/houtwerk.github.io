@@ -240,12 +240,18 @@
       background: #757474;
     }
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-    }
+   footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
     @media (max-width: 768px) {
       .container {
@@ -288,7 +294,6 @@
 </head>
 <body>
 
-  <!-- Anker bovenaan voor 'Home' -->
   <div id="top"></div>
 
   <header>
@@ -316,7 +321,6 @@
 
   <section class="hero">
     <h2>Traditioneel gebintenbouw Schiermonnikoog</h2>
-    <p>Houtwerk op maat</p>
   </section>
 
   <section class="info-blokken" id="info">
@@ -331,8 +335,8 @@
     <div class="info-card">
       <div class="info-afbeelding" style="background-image: url('images/1-min.JPG');"></div>
       <div class="info-tekst">
-        <h3>Projecten</h3>
-        <p>Bekijk enkele van onze recente realisaties: van woningen met authentieke gebinten tot sfeervolle overkappingen.</p>
+        <h3>Huidige projecten</h3>
+        <p>Ons huidig project, een woning met een traditioneel gebinten constructie en houtskeletbouw.</p>
       </div>
     </div>
 
@@ -340,7 +344,7 @@
       <div class="info-afbeelding" style="background-image: url('images/handwerk-min.jpg');"></div>
       <div class="info-tekst">
         <h3>Werkwijze</h3>
-        <p>Wij werken met de hand, met ambachtelijk gereedschap en veel oog voor detail, van ontwerp tot plaatsing.</p>
+        <p>Alles met de hand gemaakt volgens traditionele methodes. Grotendeels met traditioneel gereedschap en oog voor detail, van ontwerp tot plaatsing.</p>
       </div>
     </div>
   </section>
@@ -351,26 +355,39 @@
       <div class="step">
         <div class="step-number">1</div>
         <h3>Kennismaking</h3>
-        <p>We starten met een vrijblijvend gesprek om uw wensen en ideeën te bespreken.</p>
+        <p>Alles begint met een idee. Samen kijken we of het haalbaar is.</p>
       </div>
 
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Ontwerp en haalbaarheid</h3>
-        <p>We werken het ontwerp uit en zorgen ervoor dat alles technisch én esthetisch klopt.</p>
+        <h3>Ontwerp</h3>
+        <p>Wij maken een conceptontwerp om te kijken of alles technisch en visueel klopt.</p>
       </div>
 
       <div class="step">
         <div class="step-number">3</div>
         <h3>Offerte</h3>
-        <p>We stellen een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
+        <p>Nadat alle ideeën zijn verwerkt en afgestemd stellen we een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
       </div>
-    </div>
-  </section>
+
+      <div class="step">
+       <div class="step-number">4</div>
+       <h3>De productie van het project</h3>
+       <p>Het bouwen van de constructie begint in de werkplaats. Dit doen we uitsluitend met handgereedschap en traditionele technieken, zo houden we het ambacht in leven en dat zie je terug in de constructie.</p>
+     </div>
+ 
+     <div class="step">
+       <div class="step-number">5</div>
+       <h3>Afleveren en plaatsen</h3>
+       <p>We leveren uw constructie af of plaatsen deze zelf op locatie. Dit kan op Schiermonnikoog, in heel Nederland of zelfs daar buiten!</p>
+     </div>
+   </div>
+ </section>
+
 
   <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>Neem contact op voor meer informatie of een vrijblijvende offerte.</p>
+    <p>Wilt u meer informatie of graag weten of uw idee haalbaar is? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
     <form action="https://formspree.io/f/xvgkblnw" method="POST" class="contact-form">
       <label for="name">Naam:</label>
       <input type="text" id="name" name="name" required>
@@ -385,9 +402,12 @@
     </form>
   </section>
 
-  <footer>
+ <footer>
+  <div class="footer-content">
     <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
-  </footer>
+    <p>info@houtwerkschiermonnikoog.nl</p>
+  </div>
+</footer>
 
   <script>
     let currentIndex = 0;

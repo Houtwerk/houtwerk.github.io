@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Houtwerk Schiermonnikoog</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Outfit', sans-serif;
       margin: 0;
@@ -14,7 +19,6 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 190px;
     }
 
     header {
@@ -81,56 +85,57 @@
       background-color: #eee;
     }
 
-    .intro-info {
+    .info-blokken {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 40px;
       padding: 60px 20px;
-      background-color: white;
-      gap: 30px;
+      background-color: #fff;
     }
 
-.intro-block img {
-  width: 100%;
-  max-height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
+    .info-card {
+      display: flex;
+      flex-direction: column;
+      max-width: 360px;
+      width: 100%;
+      text-align: left;
+      color: #333;
+    }
 
-.intro-block {
-  flex: 1 1 300px;
-  max-width: 350px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  background-color: white;
-}
+    .info-afbeelding {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 15px;
+    }
 
-.intro-block:first-child {
-  background-color: transparent;
-}
+    .info-tekst {
+      padding: 0 10px;
+    }
 
-    .intro-block h3 {
+    .info-tekst h3 {
+      margin-top: 0;
       font-size: 22px;
       margin-bottom: 10px;
     }
 
-    .intro-block p {
+    .info-tekst p {
       font-size: 16px;
       color: #555;
+      margin: 0;
     }
 
-    section#proces {
+    #proces {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
       background-color: #fff;
     }
 
     #proces h2 {
       font-size: 32px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .steps {
@@ -182,9 +187,9 @@
     }
 
     .contact {
-      background-color: #fafafa;
-      padding: 60px 20px;
       text-align: center;
+      padding: 50px 20px;
+      background-color: #f4f4f4;
     }
 
     .contact-form {
@@ -245,35 +250,54 @@
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 0;
+        font-size: 16px;
       }
 
       .logo img {
         width: 200px;
       }
 
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+      .hero {
+        font-size: 20px;
+        padding: 15px;
       }
 
-      .intro-info {
-        flex-direction: column;
-        align-items: center;
+      .steps {
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      .step {
+        width: 90%;
       }
     }
   </style>
 </head>
 <body>
-<section id="home" style="height: 100vh;"></section>
+
+  <!-- Anker bovenaan voor 'Home' -->
+  <div id="top"></div>
+
   <header>
     <div class="container">
       <div class="logo">
         <img src="images/logo_transparant.png" alt="Logo">
       </div>
       <nav>
-        <a href="#home">Home</a>
+        <a href="#top">Home</a>
         <a href="#info">Info</a>
         <a href="#proces">Proces</a>
         <a href="#contact">Contact</a>
@@ -286,30 +310,38 @@
       <img src="images/sfeer-min.JPG" class="active" alt="Banner 1">
       <img src="images/detail_nok1.1-min.jpeg" alt="Banner 2">
       <img src="images/detail_sneeuw_NW1.1-min.JPG" alt="Banner 3">
-      <img src="images/werkwijze1.2-min.JPG" alt="Banner 4">
+      <img src="images/detail_schoor1.2-min.jpg" alt="Banner 4">
     </div>
   </section>
 
-  <section class="hero" id="home">
+  <section class="hero">
     <h2>Traditioneel gebintenbouw Schiermonnikoog</h2>
     <p>Houtwerk op maat</p>
   </section>
 
-  <section class="intro-info" id="info">
-    <div class="intro-block">
-  <img src="images/opbouw_spanten1.1-min.jpg" alt="Gebintenbouw">
-  <h3>Gebintenbouw</h3>
-  <p>Wij maken traditionele gebinten met de hand, volledig op maat. Duurzaam, ambachtelijk en passend bij de stijl van jouw woning of schuur.</p>
-</div>
-    <div class="intro-block">
-      <img src="images/1-min.JPG" alt="Projecten">
-      <h3>Projecten</h3>
-      <p>Bekijk eerdere projecten, van volledige woningen tot stijlvolle overkappingen. Elk project met oog voor detail en vakmanschap.</p>
+  <section class="info-blokken" id="info">
+    <div class="info-card">
+      <div class="info-afbeelding" style="background-image: url('images/opbouw_spanten1.1-min.jpg');"></div>
+      <div class="info-tekst">
+        <h3>Gebintenbouw</h3>
+        <p>Met traditionele pen-en-gatverbindingen bouwen wij constructies van massief eikenhout, volledig op maat gemaakt.</p>
+      </div>
     </div>
-    <div class="intro-block">
-      <img src="images/handwerk-min.jpg" alt="Werkwijze">
-      <h3>Werkwijze</h3>
-      <p>Van eerste contact tot plaatsing: wij begeleiden je stap voor stap. Heldere communicatie en vakmanschap staan centraal.</p>
+
+    <div class="info-card">
+      <div class="info-afbeelding" style="background-image: url('images/1-min.JPG');"></div>
+      <div class="info-tekst">
+        <h3>Projecten</h3>
+        <p>Bekijk enkele van onze recente realisaties: van woningen met authentieke gebinten tot sfeervolle overkappingen.</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-afbeelding" style="background-image: url('images/handwerk-min.jpg');"></div>
+      <div class="info-tekst">
+        <h3>Werkwijze</h3>
+        <p>Wij werken met de hand, met ambachtelijk gereedschap en veel oog voor detail, van ontwerp tot plaatsing.</p>
+      </div>
     </div>
   </section>
 
@@ -321,25 +353,17 @@
         <h3>Kennismaking</h3>
         <p>We starten met een vrijblijvend gesprek om uw wensen en ideeën te bespreken.</p>
       </div>
+
       <div class="step">
         <div class="step-number">2</div>
-        <h3>Bespreken van het ontwerp</h3>
-        <p>We werken het ontwerp uit en zorgen ervoor dat alles naar wens en haalbaar is.</p>
+        <h3>Ontwerp en haalbaarheid</h3>
+        <p>We werken het ontwerp uit en zorgen ervoor dat alles technisch én esthetisch klopt.</p>
       </div>
+
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Offerte traject</h3>
-        <p>We stellen een offerte op met alle details en kosten voor uw project.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <h3>Productie van het project</h3>
-        <p>Het bouwen van de constructie begint in de werkplaats, volledig met handgereedschap en traditionele technieken.</p>
-      </div>
-      <div class="step">
-        <div class="step-number">5</div>
-        <h3>Afleveren en plaatsen</h3>
-        <p>We leveren uw constructie af of plaatsen deze op locatie in Nederland of daarbuiten.</p>
+        <h3>Offerte</h3>
+        <p>We stellen een duidelijke offerte op, inclusief materialen, werkuren en planning.</p>
       </div>
     </div>
   </section>
@@ -350,10 +374,13 @@
     <form action="https://formspree.io/f/xvgkblnw" method="POST" class="contact-form">
       <label for="name">Naam:</label>
       <input type="text" id="name" name="name" required>
+
       <label for="email">E-mail:</label>
       <input type="email" id="email" name="email" required>
+
       <label for="message">Bericht:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+      <textarea id="message" name="message" required></textarea>
+
       <button type="submit">Verzenden</button>
     </form>
   </section>
@@ -372,8 +399,7 @@
       images[currentIndex].classList.add('active');
     }
 
-    setInterval(switchImage, 10000);
+    setInterval(switchImage, 10000); // Wissel elke 10 seconden
   </script>
-
 </body>
 </html>

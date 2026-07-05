@@ -1,232 +1,181 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Houtwerk Schiermonnikoog – Traditioneel gebintenbouw</title>
+<title>Houtwerk Schiermonnikoog</title>
 
-  <meta name="description" content="Traditioneel gebintenbouw, ambachtelijk houtwerk op maat op Schiermonnikoog.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: #f4f4f4;
+}
 
-    body {
-      font-family: 'Outfit', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 130px;
-    }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
 
-    header {
-      background-color: white;
-      padding: 15px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-    }
+.logo img {
+  width: 280px;
+}
 
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 10px;
-    }
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
 
-    .logo img {
-      width: 300px;
-      height: auto;
-    }
+/* HERO */
+.banner {
+  position: relative;
+  margin-top: 110px;
+  height: 520px;
+  overflow: hidden;
+}
 
-    nav a {
-      color: #333;
-      margin-left: 20px;
-      text-decoration: none;
-      font-size: 18px;
-    }
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+  /* 🔥 BELANGRIJK: bepaalt uitlijning */
+  object-position: center 40%;
+}
 
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 450px;
-      margin-top: 130px;
-      overflow: hidden;
-    }
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.2)
+  );
+  display: flex;
+  align-items: center;
+  padding: 60px;
+}
 
-    .banner-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.hero-text {
+  color: white;
+  max-width: 600px;
+}
 
-    .info-blokken {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      padding: 60px 20px;
-      background-color: #fff;
-    }
+.hero-text h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
 
-    @media (max-width: 1100px) {
-      .info-blokken {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+.hero-text p {
+  font-size: 18px;
+  opacity: 0.9;
+}
 
-    @media (max-width: 600px) {
-      .info-blokken {
-        grid-template-columns: 1fr;
-      }
-    }
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
 
-    .info-card {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      color: #333;
-    }
+/* INFO GRID */
+.info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 60px;
+  background: white;
+}
 
-    .info-afbeelding {
-      width: 100%;
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 15px;
-    }
+.card {
+  background: white;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
 
-    .info-tekst h2 {
-      margin: 0 0 10px;
-    }
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .info-tekst p {
-      font-size: 16px;
-      color: #555;
-      margin: 0;
-    }
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
 
-    /* PROCES */
-    #proces {
-      padding: 60px 20px;
-      text-align: center;
-      background: #f4f4f4;
-    }
+.card h3 {
+  margin: 10px 0;
+}
 
-    #proces h2 {
-      font-size: 32px;
-      margin-bottom: 60px;
-    }
+/* PROJECTEN */
+.projects {
+  padding: 60px;
+  background: #f4f4f4;
+}
 
-    .proces-wrapper {
-      max-width: 800px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      text-align: left;
-    }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-    .nummer-tekst {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
+.project {
+  overflow: hidden;
+  border-radius: 8px;
+}
 
-    .nummer {
-      font-size: 20px;
-      font-weight: bold;
-      background-color: #333;
-      color: white;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-shrink: 0;
-      margin-top: 4px;
-    }
+.project img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s;
+}
 
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 50px 20px;
-      background-color: #f4f4f4;
-    }
+.project:hover img {
+  transform: scale(1.05);
+}
 
-    .contact-form {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 25px;
-      background: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    }
+/* CONTACT */
+.contact {
+  padding: 60px;
+  background: white;
+}
 
-    .contact-form label {
-      font-weight: bold;
-      display: block;
-      margin-top: 12px;
-    }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .info { grid-template-columns: 1fr 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+}
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background: #333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 18px;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .footer-content p {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
@@ -234,132 +183,100 @@
 <header>
   <div class="container">
     <div class="logo">
-      <img src="images/logo_transparant.png" alt="Houtwerk Schiermonnikoog">
+      <img src="images/logo_transparant.png">
     </div>
     <nav>
-      <a href="#top">Home</a>
       <a href="#info">Info</a>
-      <a href="#proces">Proces</a>
-      <a href="over.html">Over Houtwerk</a>
+      <a href="#projects">Projecten</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<div id="top"></div>
-
+<!-- HERO -->
 <section class="banner">
-  <img src="images/Nok.jpg" alt="Houtwerk Schiermonnikoog" class="banner-image">
+  <img src="images/Nok.jpg" alt="Houtwerk Schiermonnikoog">
+
+  <div class="banner-overlay">
+    <div class="hero-text">
+      <h1>Houtwerk op maat</h1>
+      <p>Gebintenbouw • Houtskeletbouw • Overkappingen • Maatwerk</p>
+      <a href="#contact" class="btn">Offerte aanvragen</a>
+    </div>
+  </div>
 </section>
 
-<section class="info-blokken" id="info">
+<!-- INFO -->
+<section class="info" id="info">
 
-  <div class="info-card">
-    <div class="info-afbeelding" style="background-image:url('images/opbouw_spanten1.1-min.jpg')"></div>
-    <div class="info-tekst">
-      <h2>Gebintenbouw</h2>
-      <p>Constructies met traditionele pen-en-gatverbindingen van massief Eiken, Douglas of Grenen, volledig op maat gemaakt.</p>
-    </div>
+  <div class="card reveal">
+    <img src="images/opbouw_spanten1.1-min.jpg">
+    <h3>Gebintenbouw</h3>
+    <p>Traditionele constructies van eiken en douglas.</p>
   </div>
 
-  <div class="info-card">
-    <div class="info-afbeelding" style="background-image:url('images/Houtskelet.JPG')"></div>
-    <div class="info-tekst">
-      <h2>Houtskeletbouw</h2>
-      <p>Duurzame en lichte houtconstructies, volledig op maat en heel breed toepasbaar.</p>
-    </div>
+  <div class="card reveal">
+    <img src="images/Houtskelet.JPG">
+    <h3>Houtskeletbouw</h3>
+    <p>Duurzaam en flexibel bouwen.</p>
   </div>
 
-  <div class="info-card">
-    <div class="info-afbeelding" style="background-image:url('images/Eiken_overkapping.jpg')"></div>
-    <div class="info-tekst">
-      <h2>Overkappingen</h2>
-      <p>Van robuust eiken tot Douglas of grenen, mogelijk in alle maten en vormen.</p>
-    </div>
+  <div class="card reveal">
+    <img src="images/Eiken_overkapping.jpg">
+    <h3>Overkappingen</h3>
+    <p>Veranda’s en buitenconstructies.</p>
   </div>
 
-  <div class="info-card">
-    <div class="info-afbeelding" style="background-image:url('images/Container.jpg')"></div>
-    <div class="info-tekst">
-      <h2>Overig houtwerk</h2>
-      <p>Een ander idee met hout? Ook bij maatwerk en ander soort houtconstructies help ik graag</p>
-    </div>
+  <div class="card reveal">
+    <img src="images/Container.jpg">
+    <h3>Maatwerk</h3>
+    <p>Unieke houtprojecten.</p>
   </div>
 
 </section>
 
-<section id="proces">
-  <h2>Het proces van aanvraag tot realisatie</h2>
+<!-- PROJECTEN -->
+<section class="projects" id="projects">
+  <h2>Projecten</h2>
 
-  <div class="proces-wrapper">
+  <div class="project-grid">
 
-    <div class="nummer-tekst">
-      <div class="nummer">1</div>
-      <div class="tekst">
-        <h3>Kennismaking</h3>
-        <p>Alles begint met een idee. Samen kijken we of het haalbaar is of hoe we het haalbaar maken.</p>
-      </div>
+    <div class="project">
+      <img src="images/project1.jpg">
     </div>
 
-    <div class="nummer-tekst">
-      <div class="nummer">2</div>
-      <div class="tekst">
-        <h3>Het ontwerp</h3>
-        <p>Er zal een conceptontwerp gemaakt worden om te kijken of alles technisch en visueel klopt.</p>
-      </div>
+    <div class="project">
+      <img src="images/project2.jpg">
     </div>
 
-    <div class="nummer-tekst">
-      <div class="nummer">3</div>
-      <div class="tekst">
-        <h3>Offerte</h3>
-        <p>Als ideeën zijn verwerkt en afgestemd zal er een duidelijke offerte opgesteld worden, inclusief materialen, werkuren en planning.</p>
-      </div>
-    </div>
-
-    <div class="nummer-tekst">
-      <div class="nummer">4</div>
-      <div class="tekst">
-        <h3>De productie</h3>
-        <p>Het bouwen van de constructie begint in de werkplaats of op locatie.</p>
-      </div>
-    </div>
-
-    <div class="nummer-tekst">
-      <div class="nummer">5</div>
-      <div class="tekst">
-        <h3>Afleveren en plaatsen</h3>
-        <p>De constructie zal afgeleverd en/of geplaatst worden op uw locatie. Dit kan op Schiermonnikoog maar ook in de rest van Nederland of daar buiten.</p>
-      </div>
+    <div class="project">
+      <img src="images/project3.jpg">
     </div>
 
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Contact</h2>
-  <p>Heeft u een idee of vraag? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
 
-  <form class="contact-form" action="https://formspree.io/f/xvgkblnw" method="POST">
-    <label>Naam</label>
-    <input type="text" name="name" required>
-
-    <label>E-mail</label>
-    <input type="email" name="email" required>
-
-    <label>Bericht</label>
-    <textarea name="message" required></textarea>
-
-    <button type="submit">Verzenden</button>
-  </form>
+  <p>info@houtwerk-schiermonnikoog.nl</p>
 </section>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
-    <p>info@houtwerk-schiermonnikoog.nl</p>
-  </div>
-</footer>
+<script>
+// scroll reveal
+const cards = document.querySelectorAll('.card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 </body>
 </html>

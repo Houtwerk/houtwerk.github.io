@@ -19,7 +19,7 @@ body {
   background: #f4f4f4;
 }
 
-/* HEADER */
+/* HEADER (wit blijft) */
 header {
   position: fixed;
   top: 0;
@@ -97,24 +97,23 @@ nav a {
   border-radius: 6px;
 }
 
-/* 🔥 MOGELIJKHEDEN SECTIE (AANGEPAST) */
+/* =========================
+   MOGELIJKHEDEN (donker)
+========================= */
 .info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 70px 60px;
-  background: #2f2f2f; /* licht antraciet */
+  background: #2f2f2f;
 }
 
-/* TITEL OPTIONEEL */
 .info h2 {
   grid-column: 1 / -1;
   color: #f5f5f5;
   font-size: 28px;
-  margin-bottom: 10px;
 }
 
-/* CARD */
 .card {
   background: #3a3a3a;
   padding: 15px;
@@ -139,22 +138,32 @@ nav a {
 
 .card h3 {
   margin-top: 10px;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* PROJECTEN */
+/* =========================
+   PROJECTEN (NU OOK DONKER)
+========================= */
 .projects {
-  padding: 60px;
+  padding: 70px 60px;
+  background: #2f2f2f;
+  color: white;
 }
 
 .projects h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #f5f5f5;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.project {
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .project img {
@@ -168,11 +177,14 @@ nav a {
   transform: scale(1.05);
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT (licht blijft)
+========================= */
 .contact {
   text-align: center;
   padding: 50px 20px;
   background-color: #f4f4f4;
+  color: #333;
 }
 
 .contact-form {
@@ -288,7 +300,7 @@ footer {
 
 </section>
 
-<!-- PROJECTEN -->
+<!-- PROJECTEN (NU DONKER) -->
 <section class="projects" id="projects">
   <h2>Projecten</h2>
 
@@ -303,7 +315,7 @@ footer {
 <section class="contact" id="contact">
   <h2>Contact</h2>
 
-  <p>Vul het formulier in voor een offerte, idee of vraag.</p>
+  <p>Heeft u een idee of vraag? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
 
   <form class="contact-form" action="https://formspree.io/f/xvgkblnw" method="POST">
 
@@ -327,20 +339,6 @@ footer {
     <p>info@houtwerk-schiermonnikoog.nl</p>
   </div>
 </footer>
-
-<script>
-const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-cards.forEach(card => observer.observe(card));
-</script>
 
 </body>
 </html>

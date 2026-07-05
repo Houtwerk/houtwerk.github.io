@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -19,7 +20,12 @@ body {
   background: #f4f4f4;
 }
 
-/* HEADER (wit blijft) */
+/* FIX: scroll offset voor header */
+section {
+  scroll-margin-top: 130px;
+}
+
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -98,35 +104,29 @@ nav a {
 }
 
 /* =========================
-   MOGELIJKHEDEN (donker)
+   MOGELIJKHEDEN
 ========================= */
 .info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 70px 60px;
-  background: #2f2f2f;
+  background: #f7f7f7;
 }
 
 .info h2 {
   grid-column: 1 / -1;
-  color: #f5f5f5;
+  color: #333;
   font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .card {
-  background: #3a3a3a;
+  background: white;
   padding: 15px;
   border-radius: 10px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-  color: #f2f2f2;
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  color: #333;
 }
 
 .card img {
@@ -138,21 +138,19 @@ nav a {
 
 .card h3 {
   margin-top: 10px;
-  color: #fff;
 }
 
 /* =========================
-   PROJECTEN (NU OOK DONKER)
+   PROJECTEN
 ========================= */
 .projects {
   padding: 70px 60px;
-  background: #2f2f2f;
-  color: white;
+  background: #f7f7f7;
 }
 
 .projects h2 {
   margin-bottom: 25px;
-  color: #f5f5f5;
+  color: #333;
 }
 
 .project-grid {
@@ -164,6 +162,7 @@ nav a {
 .project {
   overflow: hidden;
   border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
 .project img {
@@ -177,9 +176,7 @@ nav a {
   transform: scale(1.05);
 }
 
-/* =========================
-   CONTACT (licht blijft)
-========================= */
+/* CONTACT (ongewijzigd) */
 .contact {
   text-align: center;
   padding: 50px 20px;
@@ -242,6 +239,7 @@ footer {
   .info { grid-template-columns: 1fr 1fr; }
   .project-grid { grid-template-columns: 1fr; }
 }
+
 </style>
 </head>
 
@@ -278,29 +276,29 @@ footer {
 
   <h2>Mogelijkheden</h2>
 
-  <div class="card visible">
+  <div class="card">
     <img src="images/opbouw_spanten1.1-min.jpg">
     <h3>Gebintenbouw</h3>
   </div>
 
-  <div class="card visible">
+  <div class="card">
     <img src="images/Houtskelet.JPG">
     <h3>Houtskeletbouw</h3>
   </div>
 
-  <div class="card visible">
+  <div class="card">
     <img src="images/Eiken_overkapping.jpg">
     <h3>Overkappingen</h3>
   </div>
 
-  <div class="card visible">
+  <div class="card">
     <img src="images/Container.jpg">
     <h3>Overig houtwerk</h3>
   </div>
 
 </section>
 
-<!-- PROJECTEN (NU DONKER) -->
+<!-- PROJECTEN -->
 <section class="projects" id="projects">
   <h2>Projecten</h2>
 

@@ -19,7 +19,6 @@ body {
   background: #f4f4f4;
 }
 
-/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -60,19 +59,13 @@ nav a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* 🔥 BELANGRIJK: bepaalt uitlijning */
   object-position: center 40%;
 }
 
 .banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.2)
-  );
+  background: linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.2));
   display: flex;
   align-items: center;
   padding: 60px;
@@ -90,7 +83,6 @@ nav a {
 
 .hero-text p {
   font-size: 18px;
-  opacity: 0.9;
 }
 
 .btn {
@@ -104,7 +96,7 @@ nav a {
   border-radius: 6px;
 }
 
-/* INFO GRID */
+/* INFO */
 .info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -114,7 +106,6 @@ nav a {
 }
 
 .card {
-  background: white;
   opacity: 0;
   transform: translateY(40px);
   transition: 0.6s ease;
@@ -131,14 +122,9 @@ nav a {
   object-fit: cover;
 }
 
-.card h3 {
-  margin: 10px 0;
-}
-
 /* PROJECTEN */
 .projects {
   padding: 60px;
-  background: #f4f4f4;
 }
 
 .project-grid {
@@ -147,26 +133,72 @@ nav a {
   gap: 20px;
 }
 
-.project {
-  overflow: hidden;
-  border-radius: 8px;
-}
-
 .project img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 .project:hover img {
   transform: scale(1.05);
 }
 
-/* CONTACT */
+/* CONTACT (TERUG JOUW ORIGINELE STRUCTUUR) */
 .contact {
-  padding: 60px;
-  background: white;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+}
+
+.contact-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #333;
+  color: white;
+  border: none;
+  margin-top: 15px;
+}
+
+/* FOOTER (TERUG JOUW VERSIE) */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 /* RESPONSIVE */
@@ -174,7 +206,6 @@ nav a {
   .info { grid-template-columns: 1fr 1fr; }
   .project-grid { grid-template-columns: 1fr; }
 }
-
 </style>
 </head>
 
@@ -200,7 +231,7 @@ nav a {
   <div class="banner-overlay">
     <div class="hero-text">
       <h1>Houtwerk op maat</h1>
-      <p>Gebintenbouw • Houtskeletbouw • Overkappingen • Maatwerk</p>
+      <p>Gebintenbouw • Houtskeletbouw • Overkappingen • Overig houtwerk</p>
       <a href="#contact" class="btn">Offerte aanvragen</a>
     </div>
   </div>
@@ -209,28 +240,24 @@ nav a {
 <!-- INFO -->
 <section class="info" id="info">
 
-  <div class="card reveal">
+  <div class="card visible">
     <img src="images/opbouw_spanten1.1-min.jpg">
     <h3>Gebintenbouw</h3>
-    <p>Traditionele constructies van eiken en douglas.</p>
   </div>
 
-  <div class="card reveal">
+  <div class="card visible">
     <img src="images/Houtskelet.JPG">
     <h3>Houtskeletbouw</h3>
-    <p>Duurzaam en flexibel bouwen.</p>
   </div>
 
-  <div class="card reveal">
+  <div class="card visible">
     <img src="images/Eiken_overkapping.jpg">
     <h3>Overkappingen</h3>
-    <p>Veranda’s en buitenconstructies.</p>
   </div>
 
-  <div class="card reveal">
+  <div class="card visible">
     <img src="images/Container.jpg">
-    <h3>Maatwerk</h3>
-    <p>Unieke houtprojecten.</p>
+    <h3>Overig houtwerk</h3>
   </div>
 
 </section>
@@ -240,31 +267,42 @@ nav a {
   <h2>Projecten</h2>
 
   <div class="project-grid">
-
-    <div class="project">
-      <img src="images/project1.jpg">
-    </div>
-
-    <div class="project">
-      <img src="images/project2.jpg">
-    </div>
-
-    <div class="project">
-      <img src="images/project3.jpg">
-    </div>
-
+    <div class="project"><img src="images/project1.jpg"></div>
+    <div class="project"><img src="images/project2.jpg"></div>
+    <div class="project"><img src="images/project3.jpg"></div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT (TERUG ORIGINEEL) -->
 <section class="contact" id="contact">
   <h2>Contact</h2>
 
-  <p>info@houtwerk-schiermonnikoog.nl</p>
+  <p>Heeft u een idee of vraag? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
+
+  <form class="contact-form" action="https://formspree.io/f/xvgkblnw" method="POST">
+
+    <label for="name">Naam:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Bericht:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Verzenden</button>
+  </form>
 </section>
 
+<!-- FOOTER (TERUG ORIGINEEL) -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
+    <p>info@houtwerk-schiermonnikoog.nl</p>
+  </div>
+</footer>
+
 <script>
-// scroll reveal
 const cards = document.querySelectorAll('.card');
 
 const observer = new IntersectionObserver(entries => {

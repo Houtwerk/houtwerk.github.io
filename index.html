@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Houtwerk Schiermonnikoog – Traditioneel gebintenbouw</title>
-<meta name="description" content="Traditioneel gebintenbouw, ambachtelijk houtwerk op maat op Schiermonnikoog.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Traditioneel gebintenbouw, ambachtelijk houtwerk op maat op Schiermonnikoog.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -18,10 +22,10 @@
       background-color: #f4f4f4;
     }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 0px;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 130px;
+    }
 
     header {
       background-color: white;
@@ -30,7 +34,6 @@ html {
       position: fixed;
       width: 100%;
       top: 0;
-      left: 0;
       z-index: 100;
     }
 
@@ -44,7 +47,7 @@ html {
     }
 
     .logo img {
-      width: 350px;
+      width: 300px;
       height: auto;
     }
 
@@ -60,67 +63,44 @@ html {
     }
 
     .banner {
+      position: relative;
       width: 100%;
       height: 450px;
-      position: relative;
-      overflow: hidden;
       margin-top: 130px;
+      overflow: hidden;
     }
 
-.banner {
-  width: 100%;
-  height: 450px;
-  margin-top: 130px;
-  overflow: hidden;
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-    .hero {
-      font-size: 25px;
-      text-align: center;
-      padding: 20px 20px;
-      background-color: #eee;
+    .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .hero h1 {
-  margin-bottom: 10px;
-}
 
-.hero p {
-  font-size: 22px;
-  color: #555;
-  margin: 0;
-}
+    .info-blokken {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
 
-.info-blokken {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  padding: 60px 20px;
-  background-color: #fff;
-}
-@media (max-width: 1100px) {
-  .info-blokken {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media (max-width: 1100px) {
+      .info-blokken {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-@media (max-width: 600px) {
-  .info-blokken {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 600px) {
+      .info-blokken {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .info-card {
       display: flex;
       flex-direction: column;
-      max-width: 360px;
       width: 100%;
-      text-align: left;
       color: #333;
     }
 
@@ -132,14 +112,8 @@ html {
       margin-bottom: 15px;
     }
 
-    .info-tekst {
-      padding: 0 10px;
-    }
-
-    .info-tekst h3 {
-      margin-top: 0;
-      font-size: 22px;
-      margin-bottom: 10px;
+    .info-tekst h2 {
+      margin: 0 0 10px;
     }
 
     .info-tekst p {
@@ -148,83 +122,49 @@ html {
       margin: 0;
     }
 
-  #proces {
-  padding: 60px 20px;
-  background-color: #f4f4f4;
-  text-align: center;
-}
+    /* PROCES */
+    #proces {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f4f4f4;
+    }
 
-#proces h2 {
-  font-size: 32px;
-  margin-bottom: 60px;
-}
+    #proces h2 {
+      font-size: 32px;
+      margin-bottom: 60px;
+    }
 
-#proces {
-  padding: 60px 20px;
-  background-color: #f4f4f4;
-  text-align: center;
-}
+    .proces-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      text-align: left;
+    }
 
-#proces h2 {
-  font-size: 32px;
-  margin-bottom: 60px;
-}
+    .nummer-tekst {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-.proces-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+    .nummer {
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
 
-.proces-blok {
-  text-align: left;
-}
-
-.nummer-tekst {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.nummer {
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #333;
-  color: white;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-
-.tekst h3 {
-  margin: 0 0 8px;
-  font-size: 20px;
-}
-
-.tekst p {
-  margin: 0;
-  font-size: 16px;
-  color: #444;
-}
-
-@media (max-width: 768px) {
-  .nummer-tekst {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .tekst {
-    margin-top: 10px;
-  }
-}
+    /* CONTACT */
     .contact {
       text-align: center;
       padding: 50px 20px;
@@ -257,8 +197,8 @@ html {
     }
 
     .contact-form textarea {
-      resize: vertical;
       min-height: 120px;
+      resize: vertical;
     }
 
     .contact-form button {
@@ -272,217 +212,149 @@ html {
       font-size: 18px;
       cursor: pointer;
       margin-top: 18px;
-      transition: background 0.3s ease-in-out;
     }
 
-    .contact-form button:hover {
-      background: #757474;
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
     }
-#home,
-#info,
-#projecten,
-#werkwijze,
-#proces,
-#contact {
-  scroll-margin-top: 150px;
-}
-   footer {
-  background-color: #333;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-}
 
-.footer-content p {
-  margin: 5px 0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      nav a {
-        margin: 0;
-        font-size: 16px;
-      }
-
-      .logo img {
-        width: 200px;
-      }
-
-      .hero {
-        font-size: 20px;
-        padding: 15px;
-      }
-
-      .steps {
-        width: 100%;
-        padding: 0 15px;
-      }
-
-      .step {
-        width: 90%;
-      }
+    .footer-content p {
+      margin: 5px 0;
+      font-size: 16px;
     }
+
   </style>
 </head>
+
 <body>
 
-  <div id="top"></div>
-
-  <header>
-    <div class="container">
-      <div class="logo">
-        <img src="images/logo_transparant.png" alt="Houtwerk Schiermonnikoog">
-      </div>
-      <nav>
-        <a href="#top">Home</a>
-        <a href="#info">Info</a>
-        <a href="#proces">Proces</a>
-        <a href="over.html">Over Houtwerk</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo_transparant.png" alt="Houtwerk Schiermonnikoog">
     </div>
-  </header>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#info">Info</a>
+      <a href="#proces">Proces</a>
+      <a href="over.html">Over Houtwerk</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
- <section class="banner">
-  <img src="images/Nok.jpg" alt="Houtwerk Schiermonnikoog - Gebintenbouw" class="banner-image">
+<div id="top"></div>
+
+<section class="banner">
+  <img src="images/Nok.jpg" alt="Houtwerk Schiermonnikoog" class="banner-image">
 </section>
 
-<section class="hero">
-  <h1>Houtwerk op maat</h1>
-  <p>Gebintenbouw • Houtskeletbouw • Overkappingen • Overig houtwerk</p>
+<section class="info-blokken" id="info">
+
+  <div class="info-card">
+    <div class="info-afbeelding" style="background-image:url('images/opbouw_spanten1.1-min.jpg')"></div>
+    <div class="info-tekst">
+      <h2>Gebintenbouw</h2>
+      <p>Constructies met traditionele pen-en-gatverbindingen van massief Eiken, Douglas of Grenen, volledig op maat gemaakt.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-afbeelding" style="background-image:url('images/Houtskelet.JPG')"></div>
+    <div class="info-tekst">
+      <h2>Houtskeletbouw</h2>
+      <p>Duurzame en lichte houtconstructies, volledig op maat en heel breed toepasbaar.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-afbeelding" style="background-image:url('images/Eiken_overkapping.jpg')"></div>
+    <div class="info-tekst">
+      <h2>Overkappingen</h2>
+      <p>Van robuust eiken tot Douglas of grenen, mogelijk in alle maten en vormen.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="info-afbeelding" style="background-image:url('images/Container.jpg')"></div>
+    <div class="info-tekst">
+      <h2>Overig houtwerk</h2>
+      <p>Een ander idee met hout? Ook bij maatwerk en ander soort houtconstructies help ik graag</p>
+    </div>
+  </div>
+
 </section>
 
-  <section class="info-blokken" id="info">
-    <div class="info-card">
-      <div class="info-afbeelding" style="background-image: url('images/opbouw_spanten1.1-min.jpg');">
-      <img src="images/opbouw_spanten1.1-min.jpg" alt="Eiken gebintenbouw Houtwerk Schiermonnikoog" style="display: none;">
-              </div>
-      <div class="info-tekst">
-        <h2>Gebintenbouw</h2>
-        <p>Constructies met traditionele pen-en-gatverbindingen van massief Eiken, Douglas of Grenen, volledig op maat gemaakt.</p>
-      </div>
-    </div>
-
-    <div class="info-card">
-      <div class="info-afbeelding" style="background-image: url('images/Houtskelet.JPG');">
-        <img src="images/Houtskelet.JPG" alt="Traditioneel eiken gebinten huis op Schiermonnikoog" style="display: none;">
-         </div>
-      <div class="info-tekst">
-        <h2>Houtskeletbouw</h2>
-        <p>Duurzame en lichte houtconstructies, volledig op maat en heel breed toepasbaar.</p>
-      </div>
-    </div>
-
-    <div class="info-card">
-     <div class="info-afbeelding" style="background-image: url('images/Eiken_overkapping.jpg');">
-      <img src="images/Eiken_overkapping.jpg" alt="Gebintenbouw Eiken balken Houtwerk Schiermonnikoog" style="display: none;">
-      </div>
-      <div class="info-tekst">
-        <h2>Overkappingen</h2>
-        <p>Van robuust eiken tot Douglas of grenen, mogelijk in alle maten en vormen.</p>
-      </div>
-    </div>
-
-    <div class="info-card">
-     <div class="info-afbeelding" style="background-image: url('images/Container.jpg');">
-      <img src="images/Container.jpg" alt="Gebintenbouw Eiken balken Houtwerk Schiermonnikoog" style="display: none;">
-      </div>
-      <div class="info-tekst">
-        <h2>Overig houtwerk</h2>
-        <p>Een ander idee met hout? Ook bij maatwerk en ander soort houtconstructies help ik graag</p>
-      </div>
-    </div>
-  </section>
-
- <section id="proces">
+<section id="proces">
   <h2>Het proces van aanvraag tot realisatie</h2>
+
   <div class="proces-wrapper">
-    
-    <div class="proces-blok">
-      <div class="nummer-tekst">
-        <div class="nummer">1</div>
-        <div class="tekst">
-          <h3>Kennismaking</h3>
-          <p>Alles begint met een idee. Samen kijken we of het haalbaar is of hoe we het haalbaar maken.</p>
-        </div>
+
+    <div class="nummer-tekst">
+      <div class="nummer">1</div>
+      <div class="tekst">
+        <h3>Kennismaking</h3>
+        <p>Alles begint met een idee. Samen kijken we of het haalbaar is of hoe we het haalbaar maken.</p>
       </div>
     </div>
 
-    <div class="proces-blok">
-      <div class="nummer-tekst">
-        <div class="nummer">2</div>
-        <div class="tekst">
-          <h3>Het ontwerp</h3>
-          <p>Er zal een conceptontwerp gemaakt worden om te kijken of alles technisch en visueel klopt.</p>
-        </div>
+    <div class="nummer-tekst">
+      <div class="nummer">2</div>
+      <div class="tekst">
+        <h3>Het ontwerp</h3>
+        <p>Er zal een conceptontwerp gemaakt worden om te kijken of alles technisch en visueel klopt.</p>
       </div>
     </div>
 
-    <div class="proces-blok">
-      <div class="nummer-tekst">
-        <div class="nummer">3</div>
-        <div class="tekst">
-          <h3>Offerte</h3>
-          <p>Als ideeën zijn verwerkt en afgestemd zal er een duidelijke offerte opgesteld worden, inclusief materialen, werkuren en planning.</p>
-        </div>
+    <div class="nummer-tekst">
+      <div class="nummer">3</div>
+      <div class="tekst">
+        <h3>Offerte</h3>
+        <p>Als ideeën zijn verwerkt en afgestemd zal er een duidelijke offerte opgesteld worden, inclusief materialen, werkuren en planning.</p>
       </div>
     </div>
 
-    <div class="proces-blok">
-      <div class="nummer-tekst">
-        <div class="nummer">4</div>
-        <div class="tekst">
-          <h3>De productie</h3>
-          <p>Het bouwen van de constructie begint in de werkplaats of op locatie.</p>
-        </div>
+    <div class="nummer-tekst">
+      <div class="nummer">4</div>
+      <div class="tekst">
+        <h3>De productie</h3>
+        <p>Het bouwen van de constructie begint in de werkplaats of op locatie.</p>
       </div>
     </div>
 
-    <div class="proces-blok">
-      <div class="nummer-tekst">
-        <div class="nummer">5</div>
-        <div class="tekst">
-          <h3>Afleveren en plaatsen</h3>
-          <p>De constructie zal afgeleverd en/of geplaatst worden op uw locatie. Dit kan op Schiermonnikoog maar ook in de rest van Nederland of daar buiten.</p>
-        </div>
+    <div class="nummer-tekst">
+      <div class="nummer">5</div>
+      <div class="tekst">
+        <h3>Afleveren en plaatsen</h3>
+        <p>De constructie zal afgeleverd en/of geplaatst worden op uw locatie. Dit kan op Schiermonnikoog maar ook in de rest van Nederland of daar buiten.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Heeft u een idee of vraag? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
-    <form action="https://formspree.io/f/xvgkblnw" method="POST" class="contact-form">
-      <label for="name">Naam:</label>
-      <input type="text" id="name" name="name" required>
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>Heeft u een idee of vraag? Vul dan het formulier in of stuur je vraag naar info@houtwerk-schiermonnikoog.nl.</p>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+  <form class="contact-form" action="https://formspree.io/f/xvgkblnw" method="POST">
+    <label>Naam</label>
+    <input type="text" name="name" required>
 
-      <label for="message">Bericht:</label>
-      <textarea id="message" name="message" required></textarea>
+    <label>E-mail</label>
+    <input type="email" name="email" required>
 
-      <button type="submit">Verzenden</button>
-    </form>
-  </section>
+    <label>Bericht</label>
+    <textarea name="message" required></textarea>
 
- <footer>
+    <button type="submit">Verzenden</button>
+  </form>
+</section>
+
+<footer>
   <div class="footer-content">
     <p>&copy; 2025 Houtwerk Schiermonnikoog</p>
     <p>info@houtwerk-schiermonnikoog.nl</p>
